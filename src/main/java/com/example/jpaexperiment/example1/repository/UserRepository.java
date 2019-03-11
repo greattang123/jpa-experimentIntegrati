@@ -24,7 +24,6 @@ public class UserRepository {
         em.persist(address1);
         Address address2=new Address("101",user);
         em.persist(address2);
-
     }
 
 }
