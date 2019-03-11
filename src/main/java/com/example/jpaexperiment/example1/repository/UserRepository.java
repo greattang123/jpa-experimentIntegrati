@@ -18,13 +18,13 @@ public class UserRepository {
     @PersistenceContext
     private EntityManager em;
     public void addUserAddress(){
-        Address address1=new Address("302");
-        em.persist(address1);
-        Address address2=new Address("101");
-        em.persist(address2);
-        List<Address> addresses=List.of(address1,address2);
         User user=new User("GT");
-        user.setAddresses(addresses);
         em.persist(user);
+        Address address1=new Address("302",user);
+        em.persist(address1);
+        Address address2=new Address("101",user);
+        em.persist(address2);
+
     }
+
 }
